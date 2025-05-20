@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { ArrowDown, ArrowUp } from "lucide-react";
 import { useActionTradeStore } from "../../../store/chart-indicator-store";
 import {  useEffect, useState } from "react";

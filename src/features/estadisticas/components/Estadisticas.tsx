@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { useOperationStore } from "../../../store/chart-indicator-store";
 import { TradeResult } from "../../../schemas/operation-schema";

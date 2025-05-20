@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { IndicatorParam } from "../../../schemas/indicator-schema";
 
 export const renderInput = (

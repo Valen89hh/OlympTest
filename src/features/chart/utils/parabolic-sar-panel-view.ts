@@ -1,17 +1,17 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import {
     ICustomSeriesPaneView,
     ICustomSeriesPaneRenderer,
     CustomSeriesOptions,
     Time,
     PriceToCoordinateConverter,
-    ISeriesApi,
     PaneRendererCustomData,
     CustomSeriesWhitespaceData,
     CustomSeriesPricePlotValues,
     LineStyle,
     PriceLineSource,
     CustomBarItemData,
-    IRange,
     IChartApi,
   } from 'lightweight-charts';
   import { CanvasRenderingTarget2D } from 'fancy-canvas';

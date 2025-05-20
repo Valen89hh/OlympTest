@@ -23,7 +23,7 @@ const Header = () => {
             <Container className="flex px-4 py-4 justify-between items-center">
                 <h1 className="text-2xl font-bold flex items-center gap-2 text-blue-700">
                     <ChartLine size={24}/>
-                    Plataforma de Backtesting
+                    OlympTest
                 </h1>
 
                 <div className="flex items-center space-x-4">

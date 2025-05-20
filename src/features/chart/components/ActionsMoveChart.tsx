@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Pause, Play, SkipBack, SkipForward } from "lucide-react";
 import { useNavigationChartStore } from "../../../store/chart-indicator-store";
 import { useEffect } from "react";

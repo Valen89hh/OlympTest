@@ -1,10 +1,6 @@
-import {CandlestickData, Time} from 'lightweight-charts'
 import Header from './components/layout/Header'
 import Container from './components/containers/Container'
 import Footer from './components/layout/Footer'
-import Card from './components/ui/cards/Card'
-import GroupTagIndicator from './features/chart/components/GroupTagIndicator'
-import CandleChart from './features/chart/components/CandleChart'
 import ChartWrapper from './features/chart/components/ChartWrapper'
 import Estadisticas from './features/estadisticas/components/Estadisticas'
 

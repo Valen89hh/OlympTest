@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Indicator } from "../../../schemas/indicator-schema";
 
 export const parseValueByType = (value: any, type: string): string | number | boolean => {
