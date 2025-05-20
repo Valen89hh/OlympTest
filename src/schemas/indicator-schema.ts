@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { ISeriesApi } from "lightweight-charts";
+
 export type IndicatorColor =
   | "#1f77b4" // Azul
   | "#ff7f0e" // Naranja
@@ -18,5 +21,11 @@ export interface Indicator {
     name: string;
     params: Record<string, IndicatorParam>;
 }
+
+
+export type IndicatorSeries =
+  | { type: 'single'; series: ISeriesApi<any, any> }
+  | { type: 'bollinger'; upper: ISeriesApi<'Line'>; middle: ISeriesApi<'Line'>; lower: ISeriesApi<'Line'> }
+  | { type: 'stochastic'; kSeries: ISeriesApi<'Line'>; dSeries: ISeriesApi<'Line'> };
 
   

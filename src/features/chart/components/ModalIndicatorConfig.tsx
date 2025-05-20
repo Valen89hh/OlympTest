@@ -18,6 +18,7 @@ const ModalIndicatorConfig: React.FC<ModalIndicatorConfigProps> = ({
 }) => {
   const [params, setParams] = useState(indicator.params);
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleChangeParam = (key: string, value: any) => {
     const p = params[key]
     const parsedValue = parseValueByType(value, p.type);
@@ -43,6 +44,7 @@ const ModalIndicatorConfig: React.FC<ModalIndicatorConfigProps> = ({
 
   const handleConfirm = (e: React.FormEvent) => {
     e.preventDefault();
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const hasEmptyFields = Object.entries(params).some(([_, param]) => {
         const { value, type } = param;
     

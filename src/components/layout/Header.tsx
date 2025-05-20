@@ -1,11 +1,8 @@
 import { ChartLine, Upload } from "lucide-react";
-import Select from "../ui/selects/Select";
 import { useCsvStore } from "../../store/data-csv-store";
 import Container from "../containers/Container";
-import { usePorcentChartStore } from "../../store/chart-indicator-store";
 
 const Header = () => {
-    const {porcentChart, setPorcentChart} = usePorcentChartStore()
     const {setCsv, csv} = useCsvStore();
 
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -50,17 +47,6 @@ const Header = () => {
                             )}
                         </label>
                     </div>
-                    <Select
-                        options={[
-                            { label: "100 %", value: "100"},
-                            { label: "75 %", value: "75"},
-                            { label: "50 %", value: "50"},
-                            { label: "25 %", value: "25"},
-                            { label: "0 %", value: "0"},
-                        ]}
-                        value={porcentChart.toString()}
-                        onChange={(value)=>setPorcentChart(parseInt(value))}
-                    />
                 </div>
             </Container>
         </header>

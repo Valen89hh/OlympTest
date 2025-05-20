@@ -1,35 +1,31 @@
 import { ArrowDown, ArrowUp } from "lucide-react";
-import { useActionTradeStore, useNavigationChartStore } from "../../../store/chart-indicator-store";
-import { useEffect, useState } from "react";
+import { useActionTradeStore } from "../../../store/chart-indicator-store";
+import {  useEffect, useState } from "react";
 import { Directions, type Direction } from "../../../schemas/operation-schema";
 
-interface Props{
-    dataLength: number
-}
 
-const ActionsTrading: React.FC<Props> = ({dataLength}) => {
+const ActionsTrading = () => {
     const {setActionTrade} = useActionTradeStore()
     const [mount, setMount] = useState(10)
     const [duration, setDuration] = useState(1)
-    const {stepForward} = useNavigationChartStore()
 
-    const onTrade = (direction: Direction)=>{
+    const onTrade = (direction: Direction, mount: number, duration: number)=>{
         setActionTrade({
             direction: direction,
             mount: mount,
             duration: duration
         })
-        stepForward(dataLength)
+        //stepForward(dataLength)
     }
 
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {
           if (e.key === "ArrowUp") {
             e.preventDefault()
-            onTrade(Directions.Up)
+            onTrade(Directions.Up, mount, duration)
           } else if (e.key === "ArrowDown") {
             e.preventDefault()
-            onTrade(Directions.Down)
+            onTrade(Directions.Down, mount, duration)
           } 
         };
     
@@ -67,7 +63,7 @@ const ActionsTrading: React.FC<Props> = ({dataLength}) => {
 
             <div className="flex items-center flex-wrap gap-4">
                 <button
-                    onClick={()=>onTrade(Directions.Up)}
+                    onClick={()=>onTrade(Directions.Up, mount, duration)}
                     className="flex justify-between items-center gap-2 bg-green-500 hover:bg-green-600 text-white py-3 px-8 rounded-sm text-lg font-bold cursor-pointer whitespace-nowrap"
                 >
                     <ArrowUp/>
@@ -75,7 +71,7 @@ const ActionsTrading: React.FC<Props> = ({dataLength}) => {
                 </button>
 
                 <button
-                    onClick={()=>onTrade(Directions.Down)}
+                    onClick={()=>onTrade(Directions.Down, mount, duration)}
                     className="flex justify-between items-center gap-2 bg-red-500 hover:bg-red-600 text-white py-3 px-8 rounded-sm text-lg font-bold cursor-pointer whitespace-nowrap"
                 >
                     <ArrowDown/>
